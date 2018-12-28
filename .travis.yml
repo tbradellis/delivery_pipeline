@@ -5,8 +5,6 @@ services:
 
 before_install:
   - docker build -t tbellis/docker-react -f Dockerfile-dev .
-  - docker build -t tbellis/prod-react .
 
 script:
   - docker run tbellis/docker-react npm run test -- --coverage
-  - docker run tbellis/prod-react npm run test -- --coverage
