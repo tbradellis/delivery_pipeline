@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+
+before_install:
+  - docker build -t tbellis/docker-react -f Dockerfile-dev .
+
+script:
+  - docker run tbellis/docker-react -f npm run test -- --coverage
